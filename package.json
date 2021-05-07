@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/sergeytestweb/Task_1_Caesar_cipher#readme",
   "dependencies": {
-    "commander": "^7.2.0"
+    "commander": "^7.2.0",
+    "through2": "^4.0.2"
   }
 }

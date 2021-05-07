@@ -1,4 +1,4 @@
-export function encoded(shift) {
+exports.encoded = shift => {
   return function (chunk, enc, callback) {
     for (let i = 0; i < chunk.length; i++) {
       if (chunk[i] > 61 && chunk[i] < 91) {
@@ -18,7 +18,7 @@ export function encoded(shift) {
   };
 }
 
-export function decoded(shift) {
+exports.decoded = shift => {
   return function (chunk, enc, callback) {
     for (let i = 0; i < chunk.length; i++) {
       if (chunk[i] > 61 && chunk[i] < 91) {

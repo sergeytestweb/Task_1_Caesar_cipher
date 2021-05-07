@@ -1,29 +1,29 @@
-import { createReadStream } from "fs";
-import { exit, stderr } from "process";
+const { createReadStream } = require ("fs");
+const { exit, stderr } = require ("process");
+const os = require('os');
+const fs = require('fs');
 
-export function inputStream(input) {
+exports.inputStream = input => {
   if (input) {
     return createReadStream(input, "utf8");
   }
   return process.stdin;
 }
 
-export function outputStream(output) {
-  if (output) {
-    try {
-      fs.accessSync(output);
-      return fs.createWriteStream(output, {
-        flags: "a",
-      });
-    } catch (err) {
-      process.stderr.write("No such output file");
-      exit();
-    }
+exports.outputStream = (path) => {
+  let reuslt;
+  if (path) {
+    reuslt = fs.createWriteStream(path, { flags: 'a' });
+    reuslt.on('close', function () {
+      fs.createWriteStream(path, { flags: 'a' }).write(os.EOL);
+    });
+  } else {
+    reuslt = process.stdout;
   }
-  return process.stdout;
-}
+  return reuslt;
+};
 
-export function exitStream(e) {
+exports.exitStream = e => {
   if (e) {
     stderr.write("No such input file");
     exit(e);
