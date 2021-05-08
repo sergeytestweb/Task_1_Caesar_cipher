@@ -3,7 +3,6 @@ exports.validator = (action, shift) => {
     process.stderr.write(
       'error: required option "-a, --action string" , "-s, --shift number" not specified'
     );
-  else if (shift < 0) process.stderr.write("error: enter shift >= than 0");
   else if (typeof action !== "string")
     process.stderr.write(
       'error: required option "-a, --action string" not specified'
