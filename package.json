@@ -1,0 +1,23 @@
+{
+  "name": "task_1_caesar_cipher",
+  "version": "1.0.0",
+  "description": "Decode or encode any text.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergeytestweb/Task_1_Caesar_cipher.git"
+  },
+  "author": "Sergey Pozharitsky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sergeytestweb/Task_1_Caesar_cipher/issues"
+  },
+  "homepage": "https://github.com/sergeytestweb/Task_1_Caesar_cipher#readme",
+  "dependencies": {
+    "commander": "^7.2.0",
+    "through2": "^4.0.2"
+  }
+}
